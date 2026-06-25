@@ -1,28 +1,22 @@
-#include <iostream>
+def find_divisors():
+    try:
+        t = int(input())
+    except EOFError:
+        return
 
-using namespace std;
+    for i in range(1, t + 1):
+        try:
+            n = int(input())
+        except EOFError:
+            break
 
-int main()
-{
-	int i, j, t, num, div;
-    cin >> t;
-		
-    for(i = 0; i<t; i++)
-    {
-    	cin >> num;
-        cout << "Case " << i+1 << ": ";
-        
-        for(j = num; j > 0; j--)
-        {
-			if(num % j == 0)
-                cout << num/j;
-            if(j == 1)
-                cout << endl;
-            else if(num % j == 0 && j != 0)
-                cout << " ";
-        }
-    }
-	
-	return 0;
-}
+        print(f"Case {i}:", end="")
+        for j in range(1, n + 1):
+            if n % j == 0:
+                print(f" {j}", end="")
 
+        print()
+
+
+if __name__ == "__main__":
+    find_divisors()
