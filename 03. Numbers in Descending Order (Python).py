@@ -1,19 +1,11 @@
-#include <iostream>
+def print_descending_numbers():
+    numbers = list(range(1000, 0, -1))
 
-using namespace std;
+    # Process the list in chunks of 5
+    for i in range(0, len(numbers), 5):
+        chunk = numbers[i:i+5]
+        print("  ".join(map(str, chunk)))
 
-int main()
-{
-    int i, j;
 
-    for(i = 1000; i > 0; i--)
-    {
-        for(j = 0; j < 5; j++)
-            cout << i - j << "\t";
-            
-        i = i - j;
-        cout << endl;
-    }
-
-    return 0;
-}
+if __name__ == "__main__":
+    print_descending_numbers()
