@@ -1,27 +1,24 @@
-#include<cstring>
-#include<iostream>
+import sys
 
-using namespace std;
 
-int main()
-{
-    int i, n, first, last;
-    cin >> n;
-    
-    for(i = 0; i < n; i++)
-    {
-        int num;
-        cin >> num;
-        
-        first = num % 10;
-        while(num >= 10)
-        {
-            num = num/10;
-        }
-        
-        last = num;
-        cout << "Sum = " << first + last << endl;
-    }
-    
-    return 0;
-}
+def main():
+    try:
+        n = int(input())
+        for _ in range(n):
+            num_str = input()
+            num = int(num_str)
+
+            first = num % 10
+
+            temp_num = num
+            while temp_num >= 10:
+                temp_num //= 10
+            last = temp_num
+
+            print(f"Sum = {first + last}")
+    except (EOFError, ValueError):
+        pass
+
+
+if __name__ == "__main__":
+    main()
